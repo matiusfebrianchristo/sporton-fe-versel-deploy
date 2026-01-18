@@ -11,7 +11,7 @@
   --color-dark: var(--dark);
   --color-dark-alternate: var(--dark-alternate);
   --color-primary: var(--primary);
-  --color-primary-ligh: var(--primary-light);
+  --color-primary-light: var(--primary-light);
   --font-poppins: var(--font-poppins);
 }
 
@@ -21,4 +21,19 @@ html {
 
 * {
   @apply font-poppins;
+}
+
+
+/* INPUT GROUP */
+.input-group {
+  @apply mb-5;
+}
+
+.input-group label {
+  @apply text-xs mb-3;
+}
+
+.input-group input,
+.input-group textarea {
+  @apply px-4 py-2.5 bg-gray-100 w-full focus:border-gray-400 outline-none text-sm;
 }
