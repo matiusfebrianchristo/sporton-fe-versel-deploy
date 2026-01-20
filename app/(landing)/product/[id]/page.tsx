@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import ProductAction from "../../components/product-detail/product-action";
 import priceFormatter from "@/app/utils/price-formatter";

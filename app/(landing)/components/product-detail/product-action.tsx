@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Button from "../ui/button";
 import { FiArrowRight, FiShoppingBag, FiChevronUp, FiChevronDown } from "react-icons/fi";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const ProductAction = () => {
     const { push } = useRouter();
