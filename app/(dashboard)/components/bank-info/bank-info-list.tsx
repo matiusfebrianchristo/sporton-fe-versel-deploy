@@ -37,7 +37,7 @@ const bankInfoList = () => {
                             <div>{data.accountNumber}</div>
                         </div>
                         <div className="border-t border-gray-200 px-5 py-3 text-xs">
-                            <span className="opacity-50">Holder : </span>PT SportsOn Digital 
+                            <span className="opacity-50">Holder : </span>{data.accountName}
                         </div>
                     </div>
                 ))
