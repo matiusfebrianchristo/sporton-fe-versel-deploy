@@ -45,10 +45,10 @@ const ProductTable = () => {
                                     {data.stock} units
                                 </td>
                                 <td className="px-6 py-7.5 flex items-center gap-3 text-gray-600">
-                                    <button>
+                                    <button className="cursor-pointer">
                                         <FiEdit2 size={20}/>
                                     </button>
-                                    <button>
+                                    <button className="cursor-pointer">
                                         <FiTrash2 size={20}/>
                                     </button>
                                 </td>

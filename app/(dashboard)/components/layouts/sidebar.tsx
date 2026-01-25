@@ -2,11 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FiBox, FiCreditCard, FiLayers, FiLogOut, FiShoppingCart } from "react-icons/fi";
 
 const Sidebar = () => {
+    const { push } = useRouter()
     const pathName = usePathname()
+    const handleLogout = () => {
+        push('/admin/login')
+    }
 
     const menuItems = [
         {name: "Products", icon: FiBox, link: "/admin/products"},
@@ -33,7 +37,7 @@ const Sidebar = () => {
                     })
                 } 
             </div>
-            <Link href="#" className="flex gap-3 font-medium py-3 px-4.5 mx-5 hover:bg-gray-100 rounded-lg mt-auto mb-10">
+            <Link  href="/admin/login" className="flex gap-3 font-medium py-3 px-4.5 mx-5 hover:bg-gray-100 rounded-lg mt-auto mb-10">
                 <FiLogOut size={24}/>
                 Logout
             </Link>
