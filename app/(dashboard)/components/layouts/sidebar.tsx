@@ -1,5 +1,6 @@
 "use client"
 
+import { logout } from "@/app/services/auth.service";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -9,7 +10,8 @@ const Sidebar = () => {
     const { push } = useRouter()
     const pathName = usePathname()
     const handleLogout = () => {
-        push('/admin/login')
+        logout()
+        push("/admin/login")
     }
 
     const menuItems = [
@@ -18,6 +20,7 @@ const Sidebar = () => {
         {name: "Transactions", icon: FiShoppingCart, link: "/admin/transactions"},
         {name: "Bank Informations", icon: FiCreditCard, link: "/admin/bank-info"}
     ]
+
     return (
         <aside className="w-80 min-h-screen bg-white border-r border-gray-100 flex flex-col fixed left-0 top-0">
             <div className="py-8 px-14 border-b border-gray-200">
@@ -37,10 +40,10 @@ const Sidebar = () => {
                     })
                 } 
             </div>
-            <Link  href="/admin/login" className="flex gap-3 font-medium py-3 px-4.5 mx-5 hover:bg-gray-100 rounded-lg mt-auto mb-10">
+            <button  onClick={handleLogout} className="flex gap-3 font-medium py-3 px-4.5 mx-5 cursor-pointer hover:bg-gray-100 rounded-lg mt-auto mb-10">
                 <FiLogOut size={24}/>
                 Logout
-            </Link>
+            </button>
         </aside>
     )
 }
