@@ -23,16 +23,19 @@ const ImageUploadPreview = ({label, value, onChange, className}:TImageUploadRevi
     return (
         <div className={className}>
             <div onClick={handleImageClick} className="border-2 border-dashed border-primary bg-primary/5 rounded-lg h-50 flex flex-col justify-center items-center">
-            {
-                value ? (
-                    <Image src={value} width={190} height={190} alt="preview product" className="w-full h-full rounded-lg object-cover"/>
-                ) : (
-                    <>
-                    <FiUploadCloud className="text-primary" size={24}/>
-                    <span className="text-sm font-medium">Click to Upload</span>
-                    </>
-                )
-            }
+            
+                {
+                    value ? (
+                        <div className="max-w-47.5 relative">
+                            <Image src={value} width={190} height={190} alt="preview product" className="w-full h-full rounded-lg object-cover"/>
+                        </div>
+                    ) : (
+                        <>
+                        <FiUploadCloud className="text-primary" size={24}/>
+                        <span className="text-sm font-medium">Click to Upload</span>
+                        </>
+                    )
+                }
             <input type="file" ref={fileInputRef} className="hidden" accept="image/*" onChange={handleFileChange} />
             </div>
         </div>

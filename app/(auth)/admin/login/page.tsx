@@ -21,20 +21,22 @@ const LoginPage = () => {
     },[router])
 
     const handleLogin = async () => {
-        setIsLoading(true)
+        setIsLoading(true);
         try {
-            const data = await login({email, password})
+        const data = await login({ email, password });
 
-            if (data.token) {
-                router.push("/admin/products")
-            }
-        } catch (err: any) {
-            setErrorMessage(err.message || "Something went wrong, please try again later.")
-            console.log("Login Error", err)
-        } finally {
-            setIsLoading(false)
+        if (data.token) {
+            router.push("/admin/products");
         }
-    }
+        } catch (err: any) {
+        setErrorMessage(
+            err.message || "Something went wrong, please try again later.",
+        );
+        console.error("Login error", err);
+        } finally {
+        setIsLoading(false);
+        }
+    };
 
     return (
         <main className="bg-[#F7F9FA] w-full min-h-screen flex justify-center items-center">

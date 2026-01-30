@@ -1,4 +1,3 @@
-"use client";
 
 import OrderConfirmed from "../../components/order-status/order-confirmed";
 import OrderSubmitted from "../../components/order-status/order-submitted";
