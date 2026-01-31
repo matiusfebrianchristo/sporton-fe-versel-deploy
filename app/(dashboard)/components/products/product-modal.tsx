@@ -50,7 +50,6 @@ const ProductModal = ({product, onSuccess, isOpen, onClose}:TProductModalProps) 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const {id, value} = e.target
         setFormData((prev) => ({...prev, [id]:value}))
-        console.log(value)
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -101,7 +100,7 @@ const ProductModal = ({product, onSuccess, isOpen, onClose}:TProductModalProps) 
             setFormData({
                 name: product.name,
                 description: product.description,
-                categoryId: product._id,
+                categoryId: product.category._id,
                 price: product.price,
                 stock: product.stock
             })
