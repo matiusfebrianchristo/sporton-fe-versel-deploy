@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FiX } from "react-icons/fi";
 
 type TModalProps = {
@@ -8,6 +9,21 @@ type TModalProps = {
 }
 
 const Modal = ({isOpen, onClose, title, children}: TModalProps) => {
+    useEffect(() => {
+        if (!isOpen) return
+
+        const handleEsc = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                onClose()
+            }
+        }
+
+        document.addEventListener("keydown", handleEsc)
+
+        return () => {
+            document.removeEventListener("keydown", handleEsc)
+        }
+    }, [isOpen, onClose])
     if (!isOpen) return null
      
     return (
